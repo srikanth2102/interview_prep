@@ -81,3 +81,21 @@ print("DFS In-order")
 in_order(A)
 print("DFS Pre-order")
 pre_order(A)
+
+
+#BFS with each level in a array
+
+q = [A]
+bfs = []
+while q:
+  n = len(q)
+  level = []
+  for i in range(n):
+    popped = q.pop(0)
+    if popped:
+      level.append(popped.val)
+      if popped.left : q.append(popped.left)
+      if popped.right : q.append(popped.right)
+  bfs.append(level)
+print("BFS with each level in list")
+print(bfs)
